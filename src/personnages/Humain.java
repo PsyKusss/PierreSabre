@@ -27,9 +27,9 @@ public class Humain {
     public void acheter(String bien, int prix) {
         if (argent >= prix) {
             argent -= prix;
-            parler(nom, "Je viens d'acheter " + bien + " pour " + prix + " euros.");
+            parler(nom,"J'ai " + argent +" sous en poche. "+ "Je viens d'acheter " + bien + " pour " + prix + " euros.");
         } else {
-            parler(nom, "Désolé, je n'ai pas assez d'argent pour acheter " + bien + ".");
+            parler(nom, "J'ai que " + argent +" sous en poche. " + "Désolé, je n'ai pas assez d'argent pour acheter " + bien + " pour " + prix + " euros.");
         }
     }
 
