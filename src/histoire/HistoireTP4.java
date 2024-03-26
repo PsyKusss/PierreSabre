@@ -1,6 +1,7 @@
 package histoire;
 import personnages.Commercant;
 import personnages.Humain;
+import personnages.Yakuza;
 
 public class HistoireTP4 {
 	
@@ -17,5 +18,12 @@ public class HistoireTP4 {
         marco.seFaireExtorquer();
         marco.recevoir(15);
         marco.boire();
+        
+        Yakuza yakuLeNoir = new Yakuza ("Yaku le Noir", "Whisky", 30, "Warsong");
+        yakuLeNoir.direBonjour();
+        System.out.println("(" + yakuLeNoir.getNom() + ") - Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
+        yakuLeNoir.extorquer(marco);
+        System.out.println("(" + yakuLeNoir.getNom() + ") - J'ai piqué les 15 sous de Marco, ce qui me fait " + yakuLeNoir.getArgent() + " sous dans ma poche. Hi ! Hi !");
+        
     }
 }
