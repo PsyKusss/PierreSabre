@@ -1,15 +1,21 @@
 package personnages;
 
+import java.util.Arrays;
+
 
 public class Humain {
     private String nom;
     private String boissonFavorite;
     private int argent;
+    private String[] memoire;
+    private int indexMemoire;
 
     public Humain(String nom, String boissonFavorite, int argent) {
         this.nom = nom;
         this.boissonFavorite = boissonFavorite;
         this.argent = argent;
+        this.memoire = new String[30];
+        this.indexMemoire = 0;
     }
     
     public static void parler(String nom, String texte) {
@@ -49,5 +55,31 @@ public class Humain {
 
     public int getArgent() {
         return argent;
+    }
+    
+    public void faireConnaissanceAvec(Humain autreHumain) {
+        System.out.println("(" + this.nom + ") - Bonjour ! Je m'appelle " + this.nom + " et j'aime boire du " + this.boissonFavorite + ".");
+        System.out.println("(" + autreHumain.nom + ") - Bonjour ! Je m'appelle " + autreHumain.nom + " et j'aime boire du " + autreHumain.boissonFavorite + ".");
+        this.memoire(autreHumain.nom);
+        autreHumain.memoire(this.nom);
+    }
+
+    private void memoire(String nom) {
+        if (indexMemoire >= 30) {
+            memoire[0] = nom;
+        } else {
+            memoire[indexMemoire++] = nom;
+        }
+    }
+
+    public void listerConnaissances() {
+        System.out.print("(" + this.nom + ") - Je connais beaucoup de monde dont : ");
+        for (int i = 0; i < indexMemoire; i++) {
+            System.out.print(memoire[i]);
+            if (i < indexMemoire - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
     }
 }
