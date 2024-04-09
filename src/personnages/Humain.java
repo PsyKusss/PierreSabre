@@ -23,7 +23,7 @@ public class Humain {
     }
 
     public void direBonjour() {
-        parler(nom, "Bonjour ! Je m’appelle " + nom + " et j’aime boire du " + boissonFavorite + ".");
+        parler(nom, "- Bonjour ! Je m’appelle " + nom + " et j’aime boire du " + boissonFavorite + ".");
     }
 
     public void boire() {
@@ -58,9 +58,9 @@ public class Humain {
     }
     
     public void faireConnaissanceAvec(Humain autreHumain) {
-        System.out.println("(" + this.nom + ") - Bonjour ! Je m'appelle " + this.nom + " et j'aime boire du " + this.boissonFavorite + ".");
-        System.out.println("(" + autreHumain.nom + ") - Bonjour ! Je m'appelle " + autreHumain.nom + " et j'aime boire du " + autreHumain.boissonFavorite + ".");
-        this.memoire(autreHumain.nom);
+    	direBonjour();
+    	autreHumain.direBonjour();
+    	this.memoire(autreHumain.nom);
         autreHumain.memoire(this.nom);
     }
 
